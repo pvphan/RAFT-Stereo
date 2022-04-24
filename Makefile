@@ -14,7 +14,7 @@ RUN_FLAGS = \
 	${GPU_FLAG} \
 	--ipc=host \
 	--user="$(id -u):$(id -g)" \
-	--volume=${REPO_PATH}:${WORKDIR_PATH}:ro \
+	--volume=${REPO_PATH}:${WORKDIR_PATH} \
 	--volume=/tmp/RAFTStereo/output:/tmp/output \
 	${IMAGE_TAG}
 
