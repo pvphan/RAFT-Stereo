@@ -2,3 +2,6 @@ datasets/
 models/
 demo_output/
 __pycache__/
+build/
+runs/
+*.egg-info/

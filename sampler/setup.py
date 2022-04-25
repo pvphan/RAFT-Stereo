@@ -16,6 +16,6 @@ setup(
     ],
     cmdclass={
         'build_ext': BuildExtension
-    })
-
+    }
+)
 

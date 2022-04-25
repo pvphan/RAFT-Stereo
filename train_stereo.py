@@ -94,7 +94,7 @@ class Logger:
         metrics_data = [self.running_loss[k]/Logger.SUM_FREQ for k in sorted(self.running_loss.keys())]
         training_str = "[{:6d}, {:10.7f}] ".format(self.total_steps+1, self.scheduler.get_last_lr()[0])
         metrics_str = ("{:10.4f}, "*len(metrics_data)).format(*metrics_data)
-        
+
         # print the training status
         logging.info(f"Training Metrics ({self.total_steps}): {training_str + metrics_str}")
 
@@ -249,7 +249,7 @@ if __name__ == '__main__':
 
     torch.manual_seed(1234)
     np.random.seed(1234)
-    
+
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s')
 
