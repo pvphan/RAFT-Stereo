@@ -1,7 +1,7 @@
 
 SHELL:=/bin/bash
 
-WORKDIR_PATH=/RAFTStereo
+WORKDIR_PATH=/raftstereo
 REPO_PATH:=$(dir $(abspath $(firstword $(MAKEFILE_LIST))))
 IMAGE_TAG?=pvphan/raftstereo:0.1
 
@@ -15,7 +15,6 @@ RUN_FLAGS = \
 	--ipc=host \
 	--user="$(id -u):$(id -g)" \
 	--volume=${REPO_PATH}:${WORKDIR_PATH} \
-	--volume=/tmp/RAFTStereo/output:/tmp/output \
 	${IMAGE_TAG}
 
 shell: image
