@@ -17,8 +17,11 @@ RUN_FLAGS = \
 	--volume=${REPO_PATH}:${WORKDIR_PATH} \
 	${IMAGE_TAG}
 
-shell: image
+shell: image downloaddata
 	docker run ${RUN_FLAGS} bash
+
+downloaddata:
+	./downloadall.sh
 
 image:
 	docker build --tag ${IMAGE_TAG} .
